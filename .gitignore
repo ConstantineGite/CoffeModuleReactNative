@@ -1,0 +1,14 @@
+# Intellij IDEA
+/.idea/*
+
+# library
+/node_modules/*
+
+# Prod build
+/build/*
+
+# Media files
+/source/video/*
+
+# npm
+npm-debug.log
