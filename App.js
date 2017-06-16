@@ -4,11 +4,10 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Track from './track';
 
-//console.log(store.getState(), 'First');
-
+//---console.log(store.getState(), 'First');
 export default class App extends Component {
   render() {
-//console.log(store.getState(), 'Second');
+//---console.log(store.getState(), 'Second');
     return (
       <Provider store={store}>
           <Track />

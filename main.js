@@ -6,22 +6,22 @@ import { Constants, Video} from 'expo';
 import App from './App.js'
 
 /*
-      <Video
-          source={require('./1.webm')}
-          rate={1.0}
-          volume={1.0}
-          muted={false}
-          resizeMode="cover"
-          repeat
-          style={{ width:360, height: 700 }}
-        />
+  <Video
+      source={require('./1.webm')}
+      rate={1.0}
+      volume={1.0}
+      muted={false}
+      resizeMode="cover"
+      repeat
+      style={{ width:360, height: 700 }}
+    />
 */
 
 class Maine extends Component {
   render() {
     return (
       <View >
-         <App/>
+         <App />
       </View >
     );
   }
