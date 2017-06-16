@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableNativeFeedback, Alert } from 'react-native';
+import { Text, View, StyleSheet, TouchableWithoutFeedback, Alert } from 'react-native';
 import { Video } from 'expo';
 import { connect } from 'react-redux';
 import Ball from './js/Ball';
+//console.log(typeof Ball, 'Ball');
 /*
 	<View>
 	{this.props.testStore.map((track, index) =>
@@ -26,35 +27,23 @@ changesCategory(){
           style={{ width:360, height: 700 }}
         />
 	</View>
-	return (this.props.category == true) ? <Ball/> : <Ball/>
+	return (this.props.category == true) ? <Ball/> : video
 }
 
 controlerCategory(){
 	console.log(this.props.category)
-	return (this.props.category) ? this.props.categoryControl(false ) :  this.props.categoryControl(true);
-	//return (this.props.category)  ?  this.props.categoryControl(false) : this.props.categoryControl(true)
+	return (this.props.category) ? this.props.categoryControl(false )  :  this.props.categoryControl(true);
 }
 
 
-  render() {
-  	//---console.log(this.changesCategory(), 'this.changesCategory()')
-  	//console.log('-----------------------------------------------------');
-  	//this.props.categoryControl(false)
- 	//console.log(this.controlerCategory())
- 	//console.log('-----------------------------------------------------');
+render() {
     return (
     	<View>
-    	 <TouchableNativeFeedback  onPress={this.controlerCategory.bind(this)}>
-    	 	<View>
-    			<Text>
-    				fgsdfgsdgdfgsdfgdfgdfgdfgsdfg
-    				fjfhjfhjfjhfhjfhjfjfgjhfgjhfj
-    				fjdhjfhjfhjfjhfgjhfgjhjhjgjgj
-    				jggggggggggggggggggggggggggjj
-    				gjhgggggggggggggggggggggggggf
-    			</Text>
-    		</View>
-    	 </TouchableNativeFeedback>	
+    	 <TouchableWithoutFeedback  onPress={this.controlerCategory.bind(this)}>
+			 <View style={{width: 450, height: 800,  backgroundColor: '#c7b39b' }}>
+		 		{this.changesCategory()}
+			 </View>		
+    	 </TouchableWithoutFeedback>	
 		</View>
     );
 }
