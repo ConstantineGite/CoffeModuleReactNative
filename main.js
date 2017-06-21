@@ -8,7 +8,7 @@ import App from './App.js'
 class Maine extends Component {
   render() {
     return (
-      <View >
+      <View style={{flex: 1,  backgroundColor: '#1b1814', justifyContent: 'flex-end'}}>
          <App />
       </View >
     );

@@ -9,7 +9,8 @@ const initialState = {
     'slide5',
     'slide5'
   ],
-  category: true
+  category: true,
+  loadetFont: false
 }
 
 function playlist(state = initialState, action) {
@@ -23,6 +24,11 @@ function playlist(state = initialState, action) {
       ...state,
     category : state.category = action.payload
     }
+  }else if (action.type === 'LOAD_FONT') {
+  return {
+      ...state,
+    category : state.loadetFont = action.payload
+    }
   }
   return state;
 }
@@ -32,9 +38,5 @@ const store = createStore(playlist);
 store.subscribe(() => {
  //console.log(store.getState());
 })
-
-//store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like spirit' });
-
-
 
 export default store;

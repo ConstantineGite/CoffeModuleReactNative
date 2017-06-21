@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableWithoutFeedback, Alert } from 'react-native';
 import { Video } from 'expo';
 import { connect } from 'react-redux';
-import Ball from './js/Ball';
-//console.log(typeof Ball, 'Ball');
-/*
-	<View>
-	{this.props.testStore.map((track, index) =>
-	<Text key={index}>{track}</Text>
-	)}
-	</View>
-*/
-//---console.log('start')
+import CoffeeComposition from './js/coffeeComposition';
 
 
 class Track extends Component {
@@ -27,28 +18,21 @@ changesCategory(){
           style={{ width:360, height: 700 }}
         />
 	</View>
-	return (this.props.category == true) ? <Ball/> : video
+	return (this.props.category == true)  ?  <CoffeeComposition /> : video
 }
 
 controlerCategory(){
-	console.log(this.props.category)
+  console.log(this.props.category, 'thisPropsCategory');
 	return (this.props.category) ? this.props.categoryControl(false )  :  this.props.categoryControl(true);
 }
 
-
 render() {
-    return (
-    	<View>
-    	 <TouchableWithoutFeedback  onPress={this.controlerCategory.bind(this)}>
-			 <View style={{width: 450, height: 800,  backgroundColor: '#c7b39b' }}>
-		 		{this.changesCategory()}
-			 </View>		
-    	 </TouchableWithoutFeedback>	
-		</View>
-    );
-}
-
-
+	 return (
+      	 <TouchableWithoutFeedback  onPress={this.controlerCategory.bind(this)}>
+              {this.changesCategory()}
+      	 </TouchableWithoutFeedback>	
+	    );
+	}
 }
 
 export default connect(

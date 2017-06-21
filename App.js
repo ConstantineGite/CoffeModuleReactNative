@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
 //---console.log(store.getState(), 'Second');
     return (
-      <Provider store={store}>
+      <Provider  store={store}>
           <Track />
       </Provider>
     );
