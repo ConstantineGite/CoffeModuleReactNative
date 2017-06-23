@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Constants, Video} from 'expo';
 import App from './App.js'
+import  Header from './js/header';
 
 class Maine extends Component {
   render() {

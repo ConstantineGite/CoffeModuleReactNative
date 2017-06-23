@@ -4,20 +4,16 @@ import { Font } from 'expo';
 
 
 export  const Styles = StyleSheet.create({
-  HEADER1: {
-    color : 'white'
-  },
-  HEADER2: {
-    color: 'white'
-  },
-  IMAGE : {
-  	width: '100%', 
-  	height: '70%'
+  LOGO: {
+  	marginLeft: '5%',
+  	marginTop: '5%',
+    width: '35%',
+    height: '55%',   
+    justifyContent: 'flex-start'
   },
   MAINE_CONTAINER : {
-  	width: '50%',  
-  	height: '34%',  
-  	justifyContent: 'flex-end'
+    flex: 1,  
+    backgroundColor: '#1b1814'
   }
 });
 

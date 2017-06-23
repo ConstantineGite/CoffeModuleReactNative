@@ -17,14 +17,20 @@ BuildModule(){
      )
 }
 
-qcontrolerCategory(){
-  console.log('Touch');
+Choice_Element(){
+     this.props.ParamPage(+this.props.ListSlide)
+     this.props.ProductPage('product'); 
+}
+
+PageParam(){
+     //console.log('start');
+     //return this.props.ParamPage(+this.props.ListSlide);
 }
 
 render() {
      	return (  
                <View style={Styles.MAINE_CONTAINER}>
-                     <TouchableWithoutFeedback  onPress={this.qcontrolerCategory.bind(this)}>
+                     <TouchableWithoutFeedback  onPress={this.Choice_Element.bind(this)} >
                          {this.BuildModule()}
                      </TouchableWithoutFeedback>    
                </View>

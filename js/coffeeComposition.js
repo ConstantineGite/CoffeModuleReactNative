@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import  Coffee from './Coffee';
-import  Ball from './Ball';
+import  Header from './header';
 
 const DATA = [
   { id: 1, HEADER: '', src: '' },
@@ -26,21 +26,21 @@ class CoffeeComposition extends Component {
        this.ListSlide = [
           require('../img/1.png'), require('../img/2.png'), require('../img/3.png'), 
           require('../img/4.png'), require('../img/5.png'), require('../img/6.png')
-       ];
-     }
+   ];
+ }
 
-    getButtons(){
-      return this.slids.map((el) => (
-          <Coffee ListSlide={this.ListSlide[el-1]}  header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
-        ))
-    }
+  getButtons(){
+    return this.slids.map((el) => (
+        <Coffee ListSlide={this.ListSlide[el-1]} ParamPage={this.props.ParamPage} ProductPage={this.props.ProductPage} 
+         header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
+      ))
+  }
 
     render() {
-      console.log(this.slids, 'thisSlids')
       return (
         <View style={{flex: 1,  flexDirection: 'row', justifyContent: 'flex-end' }}>
           <View style={{flex: 9, justifyContent: 'flex-end'}}>
-           <View style={{flex: 1,  backgroundColor: 'powderblue'}} />
+           <Header />
             <View style={{flex: 9, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end'}} >
                 {this.getButtons()}
             </View>

@@ -10,7 +10,9 @@ const initialState = {
     'slide5'
   ],
   category: true,
-  loadetFont: false
+  loadetFont: false,
+  page : 'cooffee',
+  pageParam : null
 }
 
 function playlist(state = initialState, action) {
@@ -29,6 +31,16 @@ function playlist(state = initialState, action) {
       ...state,
     category : state.loadetFont = action.payload
     }
+  }else if (action.type === 'CHANGE_PAGE') {
+  return {
+      ...state,
+    category : state.page = action.payload
+    }
+  }else if (action.type === 'CHANGE_PAGE_PARAM') {
+  return {
+      ...state,
+    pageParam : state.pageParam = action.payload
+    }
   }
   return state;
 }
@@ -36,7 +48,7 @@ function playlist(state = initialState, action) {
 const store = createStore(playlist);
 
 store.subscribe(() => {
- //console.log(store.getState());
+  console.log(store.getState('pageParam'), 'pageParam');
 })
 
 export default store;
