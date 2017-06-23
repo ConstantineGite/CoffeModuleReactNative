@@ -11,7 +11,7 @@ const initialState = {
   ],
   category: true,
   loadetFont: false,
-  page : 'cooffee',
+  page : 'coffee',
   pageParam : null
 }
 
@@ -48,7 +48,7 @@ function playlist(state = initialState, action) {
 const store = createStore(playlist);
 
 store.subscribe(() => {
-  console.log(store.getState('pageParam'), 'pageParam');
+  //console.log(store.getState('pageParam'), 'pageParam');
 })
 
 export default store;

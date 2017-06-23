@@ -11,24 +11,24 @@ autor(){
      let M =   <View style={{flex: 1, width: 400, flexDirection: 'row'}}>
                <View style={{flex: 0, flexDirection: 'column'}}>   
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/1.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/1.gif')} style={{width: 180, height: 220}} />
                </View>
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/2.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/2.gif')} style={{width: 180, height: 220}} />
                </View>
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/3.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/3.gif')} style={{width: 180, height: 220}} />
                </View>
                </View>
                <View style={{flex: 0, flexDirection: 'column'}}>
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/4.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/4.gif')} style={{width: 180, height: 220}} />
                </View>
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/5.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/5.gif')} style={{width: 180, height: 220}} />
                </View>
                <View style={{width: 160, height: 220}}>
-               <Image source={require('../img/6.png')} style={{width: 180, height: 220}} />
+               <Image source={require('../img/productCoffee/gif/6.gif')} style={{width: 180, height: 220}} />
                </View>
                </View>
                </View>  

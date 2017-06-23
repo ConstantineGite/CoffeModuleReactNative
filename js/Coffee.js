@@ -8,23 +8,18 @@ class Coffee extends Component {
     }
 
 BuildModule(){
-     return(
-           <View>
-               <Image style={Styles.IMAGE} source={this.props.ListSlide} />
-               <Text style={Styles.HEADER1}>{this.props.header}</Text>
-               <Text style={Styles.HEADER2}>{this.props.header2}</Text>
-          </View>    
-     )
+	 return(
+	       <View>
+	           <Image style={Styles.IMAGE} source={this.props.ListSlide} />
+	           <Text style={Styles.HEADER1}>{this.props.header}</Text>
+	           <Text style={Styles.HEADER2}>{this.props.header2}</Text>
+	      </View>    
+	 )
 }
 
 Choice_Element(){
      this.props.ParamPage(+this.props.ListSlide)
      this.props.ProductPage('product'); 
-}
-
-PageParam(){
-     //console.log('start');
-     //return this.props.ParamPage(+this.props.ListSlide);
 }
 
 render() {

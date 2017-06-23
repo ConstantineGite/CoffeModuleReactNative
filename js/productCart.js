@@ -11,15 +11,16 @@ class Product extends Component {
 
 BuildModule(){
   let mass = [
-    require('../img/productCoffee/1.mp4'), 
-    require('../img/productCoffee/2.mp4'), 
-    require('../img/productCoffee/3.mp4'),
-    require('../img/productCoffee/4.mp4'),
-    require('../img/productCoffee/5.mp4'),
-    require('../img/productCoffee/6.mp4'),
-  ];
+        require('../img/productCoffee/1.mp4'), 
+        require('../img/productCoffee/2.mp4'), 
+        require('../img/productCoffee/3.mp4'),
+        require('../img/productCoffee/4.mp4'),
+        require('../img/productCoffee/5.mp4'),
+        require('../img/productCoffee/6.mp4'),
+];
    return (
-    <View><Video
+    <View>
+        <Video
               source={mass[this.props.prodName]}
               rate={1.0}
               volume={1.0}
@@ -34,9 +35,11 @@ BuildModule(){
 
 render() {
      	return ( 
-        <View style={Styles.MAINE_CONTAINER}>
-            {this.BuildModule()}
-        </View>
+	     	 <View style={{flex: 9, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end'}} >
+		        <View style={Styles.MAINE_CONTAINER}>
+		            {this.BuildModule()}
+		        </View>
+		     </View>
      	);
      }
 }

@@ -13,41 +13,53 @@ const DATA = [
   { id: 7, HEADER: '', src: '' },
 ];
 
-class CoffeeComposition extends Component {
-     constructor(props) {
-       super(props);
-       this.slids = ['1', '2', '3', '4', '5', '6'];
-       this.slideSlogan = ['Espresso', 'Caffe Latte',  'Espresso Macchiato', 'Cortado', 'Caffe Americano', 'Cappuccino'];
-       this.Header = ['Espresso Espresso', 'Espresso & Mixed Milk',  'Espresso & Milk Foam', 
-       'Espresso & Steamed Milk', 'Espresso & Hot Water', 'Espresso & Mixed Milk'];
-       this.slideText = ['ml Espresso, 30 m', 'E50 ml Espresso, 70 ml Steamed Milk',  '50 ml Espresso, 30 ml Milk Foam', 
-       '50 ml Espresso, 30 ml Steamed Milk', '50 ml Espresso, 100 ml Hot Water', 
-       '50 ml Espresso, 50 ml Steamed Milk 50 ml Espresso'];
-       this.ListSlide = [
-          require('../img/1.png'), require('../img/2.png'), require('../img/3.png'), 
-          require('../img/4.png'), require('../img/5.png'), require('../img/6.png')
-   ];
- }
+	class CoffeeComposition extends Component {
+	     constructor(props) {
+	       super(props);
+	       //this.count: 1;
+	       //this.current: 1;
+	       this.slids = ['1', '2', '3', '4', '5', '6'];
+	       this.slideSlogan = ['Espresso', 'Caffe Latte',  'Espresso Macchiato', 'Cortado', 'Caffe Americano', 'Cappuccino'];
+	       this.Header = ['Espresso Espresso', 'Espresso & Mixed Milk',  'Espresso & Milk Foam', 
+	       'Espresso & Steamed Milk', 'Espresso & Hot Water', 'Espresso & Mixed Milk'];
+	       this.slideText = ['ml Espresso, 30 m', 'E50 ml Espresso, 70 ml Steamed Milk',  '50 ml Espresso, 30 ml Milk Foam', 
+	       '50 ml Espresso, 30 ml Steamed Milk', '50 ml Espresso, 100 ml Hot Water', 
+	       '50 ml Espresso, 50 ml Steamed Milk 50 ml Espresso'];
+	       this.ListSlide = [
+	          require('../img/productCoffee/gif/1.gif'), require('../img/productCoffee/gif/2.gif'), require('../img/productCoffee/gif/3.gif'), 
+	          require('../img/productCoffee/gif/4.gif'), require('../img/productCoffee/gif/5.gif'), require('../img/productCoffee/gif/6.gif')
+	   ];
+	 }
 
-  getButtons(){
-    return this.slids.map((el) => (
-        <Coffee ListSlide={this.ListSlide[el-1]} ParamPage={this.props.ParamPage} ProductPage={this.props.ProductPage} 
-         header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
-      ))
-  }
+	  getButtons(){
+	    return this.slids.map((el) => (
+	        <Coffee ListSlide={this.ListSlide[el-1]} ParamPage={this.props.ParamPage} ProductPage={this.props.ProductPage} 
+	         header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
+	      ))
+	  }
 
+		/*
+		  	incrementCount(){
+		  		console.log('start timer');
+				this.timer = setTimeout(this.step.bind(this), 5000);
+			}
+
+			step(){
+			let count = (this.state.count < this.state.slideCnt) ? ++this.state.count : 1;
+			this.setState(() => {
+				return { 
+					count: count,
+					current: (this.state.current == 1) ? 2 : 1
+				}
+			})
+		}
+		*/
     render() {
       return (
-        <View style={{flex: 1,  flexDirection: 'row', justifyContent: 'flex-end' }}>
-          <View style={{flex: 9, justifyContent: 'flex-end'}}>
-           <Header />
             <View style={{flex: 9, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end'}} >
-                {this.getButtons()}
+                	{this.getButtons()}
             </View>
-           <View style={{flex: 0.5,  backgroundColor: '#1b1814'}} />
-         </View>
-        <View style={{flex: 1.1,  backgroundColor: '#012c30'}} />
-      </View>
+
       )
     }
   }
