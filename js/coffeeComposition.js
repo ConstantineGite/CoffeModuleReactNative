@@ -16,8 +16,6 @@ const DATA = [
 	class CoffeeComposition extends Component {
 	     constructor(props) {
 	       super(props);
-	       //this.count: 1;
-	       //this.current: 1;
 	       this.slids = ['1', '2', '3', '4', '5', '6'];
 	       this.slideSlogan = ['Espresso', 'Caffe Latte',  'Espresso Macchiato', 'Cortado', 'Caffe Americano', 'Cappuccino'];
 	       this.Header = ['Espresso Espresso', 'Espresso & Mixed Milk',  'Espresso & Milk Foam', 
@@ -25,35 +23,23 @@ const DATA = [
 	       this.slideText = ['ml Espresso, 30 m', 'E50 ml Espresso, 70 ml Steamed Milk',  '50 ml Espresso, 30 ml Milk Foam', 
 	       '50 ml Espresso, 30 ml Steamed Milk', '50 ml Espresso, 100 ml Hot Water', 
 	       '50 ml Espresso, 50 ml Steamed Milk 50 ml Espresso'];
-	       this.ListSlide = [
-	          require('../img/productCoffee/gif/1.gif'), require('../img/productCoffee/gif/2.gif'), require('../img/productCoffee/gif/3.gif'), 
-	          require('../img/productCoffee/gif/4.gif'), require('../img/productCoffee/gif/5.gif'), require('../img/productCoffee/gif/6.gif')
+	       this.ListSlidePng = [
+	          require('../img/productCoffee/png/1.png'), require('../img/productCoffee/png/2.png'), require('../img/productCoffee/png/3.png'), 
+	          require('../img/productCoffee/png/4.png'), require('../img/productCoffee/png/5.png'), require('../img/productCoffee/png/6.png')
 	   ];
+	   	   this.ListSlideGif = [
+	   	   	  require('../img/productCoffee/gif/1.gif'), require('../img/productCoffee/gif/2.gif'), require('../img/productCoffee/gif/3.gif'), 
+	          require('../img/productCoffee/gif/4.gif'), require('../img/productCoffee/gif/5.gif'), require('../img/productCoffee/gif/6.gif')
+	   	   ]	
 	 }
 
 	  getButtons(){
 	    return this.slids.map((el) => (
-	        <Coffee ListSlide={this.ListSlide[el-1]} ParamPage={this.props.ParamPage} ProductPage={this.props.ProductPage} 
-	         header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
+	        <Coffee ListSlidePng={this.ListSlidePng[el-1]}  ListSlideGif={this.ListSlideGif[el-1]} ParamPage={this.props.ParamPage} 
+	         ProductPage={this.props.ProductPage} header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
 	      ))
 	  }
 
-		/*
-		  	incrementCount(){
-		  		console.log('start timer');
-				this.timer = setTimeout(this.step.bind(this), 5000);
-			}
-
-			step(){
-			let count = (this.state.count < this.state.slideCnt) ? ++this.state.count : 1;
-			this.setState(() => {
-				return { 
-					count: count,
-					current: (this.state.current == 1) ? 2 : 1
-				}
-			})
-		}
-		*/
     render() {
       return (
             <View style={{flex: 9, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end'}} >
