@@ -54,6 +54,12 @@ class Coffee extends Component {
 			//console.log(seckondColum, 'seckondColum');
 		//}
 		//console.log(this.props.ListSlidePng, 'this.props.ListSlidePng');
+		//console.log(this.state.current-1, 'carent');
+		//if(this.state.current-1 === 0){
+
+		//}else{
+
+		//}
 		return PngGif[this.state.current-1];
 	}
 
@@ -65,14 +71,14 @@ BuildModule(){
 	           <Image style={Styles.IMAGE} source={this.SlideChacker()} />
 	           <Text style={Styles.HEADER1}>{this.props.header}</Text>
 	           <Text style={Styles.HEADER2}>{this.props.header2}</Text>
-	      </View>    
+	       </View>    
 	 )
 }
 
 Choice_Element(){
-	console.log(this.SlideChacker(), 'element');
-
-     this.props.ParamPage(+this.SlideChacker()-1)
+	 //---console.log(this.props.ParamPage, 'ParamPage');
+	 //---console.log(this.props.ListSlidePng, 'this.props.ListSlidePng');
+     this.props.ParamPage(+this.props.ListSlidePng -1)
      this.props.ProductPage('product'); 
 }
 
