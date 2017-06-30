@@ -26,14 +26,14 @@ const DATA = [
 	       this.ListSlidePng = [
 	          require('../img/productCoffee/png/1.png'), require('../img/productCoffee/png/2.png'), require('../img/productCoffee/png/3.png'), 
 	          require('../img/productCoffee/png/4.png'), require('../img/productCoffee/png/5.png'), require('../img/productCoffee/png/6.png')
-	   ];
+	   	   ];
 	   	   this.ListSlideGif = [
 	   	   	  require('../img/productCoffee/gif/1.gif'), require('../img/productCoffee/gif/2.gif'), require('../img/productCoffee/gif/3.gif'), 
 	          require('../img/productCoffee/gif/4.gif'), require('../img/productCoffee/gif/5.gif'), require('../img/productCoffee/gif/6.gif')
-	   	   ]	
+	   	   ];	
 	 }
 
-	  getButtons(){
+	  BuildModule(){
 	    return this.slids.map((el) => (
 	        <Coffee ListSlidePng={this.ListSlidePng[el-1]}  ListSlideGif={this.ListSlideGif[el-1]} ParamPage={this.props.ParamPage} 
 	         ProductPage={this.props.ProductPage} header2={this.Header[el-1]} header={this.slideSlogan[el-1]} key={el} />
@@ -43,7 +43,7 @@ const DATA = [
     render() {
       return (
             <View style={{flex: 9, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end'}} >
-                	{this.getButtons()}
+                	{this.BuildModule()}
             </View>
 
       )

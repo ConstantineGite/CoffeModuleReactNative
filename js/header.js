@@ -14,9 +14,9 @@ class Header extends Component {
 	render() {
 		  return (
 		      <View style={Styles.MAINE_CONTAINER} > 
-	       		<TouchableWithoutFeedback  onPress={this.ReturnHome.bind(this)} >
-		        	<Image style={Styles.LOGO} source={require('../img/logo/logo.png')} />
-	        	</TouchableWithoutFeedback>   
+		       		<TouchableWithoutFeedback  onPress={this.ReturnHome.bind(this)} >
+			        		<Image style={Styles.LOGO} source={require('../img/logo/logo.png')} />
+		        	</TouchableWithoutFeedback>   
 		      </View>
 		  )
 	    }

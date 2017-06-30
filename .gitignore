@@ -7,8 +7,5 @@
 # Prod build
 /build/*
 
-# Media files
-/img/*
-
 # npm
 npm-debug.log

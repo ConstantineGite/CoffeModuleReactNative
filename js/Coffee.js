@@ -20,10 +20,8 @@ class Coffee extends Component {
 	}
 
 	step(){
-		//console.log('start');
 		let count = (this.state.count < this.state.slideCnt) ? ++this.state.count : 1;
 		this.setState(() => {
-			//console.log(this.state.current, 'start');
 			this.SlideChacker()
 			return { 
 				count: count,
@@ -32,15 +30,6 @@ class Coffee extends Component {
 		})
 	}
 
-	//isCurrent(current){
-		//console.log(this.state.current, 'cur');
-		//let cur = (this.state.current == current);
-		//return {
-		//	current: cur ? 'slideOut' : 'slideIn',
-		//	count: cur ? (this.state.count == 1) ? this.state.slideCnt : this.state.count - 1 : this.state.count
-		//}
-		//return console.log(this.step, 'step');
-	//}
 
 	SlideChacker(){
 		let PngGif = [this.props.ListSlidePng , this.props.ListSlideGif];
@@ -64,40 +53,35 @@ class Coffee extends Component {
 	}
 
 
-BuildModule(){
-	 //console.log(this.SlideChacker() , 'sdfsdfsdfds');
-	 return(
-	       <View>
-	           <Image style={Styles.IMAGE} source={this.SlideChacker()} />
-	           <Text style={Styles.HEADER1}>{this.props.header}</Text>
-	           <Text style={Styles.HEADER2}>{this.props.header2}</Text>
-	       </View>    
-	 )
-}
+	BuildModule(){
+		 return(
+		       <View>
+		           <Image style={Styles.IMAGE} source={this.SlideChacker()} />
+		           <Text style={Styles.HEADER1}>{this.props.header}</Text>
+		           <Text style={Styles.HEADER2}>{this.props.header2}</Text>
+		       </View>    
+		 )
+	}
 
-Choice_Element(){
-	 //---console.log(this.props.ParamPage, 'ParamPage');
-	 //---console.log(this.props.ListSlidePng, 'this.props.ListSlidePng');
-     this.props.ParamPage(+this.props.ListSlidePng -1)
-     this.props.ProductPage('product'); 
-}
+	Choice_Element(){
+	     this.props.ParamPage(+this.props.ListSlidePng -1)
+	     this.props.ProductPage('product'); 
+	}
 
 
+	render() {
+	     	return (  
+	               <View style={Styles.MAINE_CONTAINER}>
+	                     <TouchableWithoutFeedback  onPress={this.Choice_Element.bind(this)} >
+	                         {this.BuildModule()}
+	                     </TouchableWithoutFeedback>    
+	               </View>
+	     	);
+	     }
 
-
-render() {
-     	return (  
-               <View style={Styles.MAINE_CONTAINER}>
-                     <TouchableWithoutFeedback  onPress={this.Choice_Element.bind(this)} >
-                         {this.BuildModule()}
-                     </TouchableWithoutFeedback>    
-               </View>
-     	);
-     }
-
-  componentWillUnmount(){
+   componentWillUnmount(){
     clearInterval(this.timer)
-  }
+   }
 
    componentDidMount(){
   	this.incrementCount();
@@ -105,7 +89,7 @@ render() {
 
   componentDidUpdate(){
   	this.incrementCount();
-  }
+   }
 
 }
 
