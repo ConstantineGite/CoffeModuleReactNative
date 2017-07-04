@@ -4,10 +4,13 @@ import { Font } from 'expo';
 
 
 export  const Styles = StyleSheet.create({
-  VIDEO: {
-
+  HOME: {
+  	width : 5
   },
-  MAINE_CONTAINER : {
+  BACK : {
+  	width : 5
+  },
+  elentItem : {
   	
   }
 });

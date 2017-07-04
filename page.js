@@ -39,7 +39,7 @@ render() {
             <Header Home={this.props.categoryControl} /> 
             {this.returnePage()}
           </View>
-        <View style={{flex: 1.3,  backgroundColor: '#f3f3f3'}} />
+          <Meny />
       </View>
     </View>
 	    );

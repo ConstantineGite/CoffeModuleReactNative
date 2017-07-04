@@ -1,62 +1,44 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-//import { Fonts } from '../stylesheets/coffeeElementST'
-//import { Styles } from '../stylesheets/productST'
-/*
-  class Meny extends Component {
-       constructor(props) {
-        super(props);
-        this.Menu_Item = [
-          'home', 'coffee', 'tea', 'hot-chocolate', 'BACK'
-        ]
-      }
-
-  BuildModule(){
-     return (
-   
-            <View><Text>val</Text><View>
-        
-    )
-  }
-
-  render() {
-       	return ( 
-  	     	<View style={{ flex: 1}}>
-  		            {this.BuildModule()}
-  		     </View>
-       	)
-       }
-  }
-
-  export default Meny;
-  **/
-  // Exported from snack.expo.io
+import { View, Text, Image, StyleSheet, TouchableWithoutFeedback} from 'react-native';
+import { Styles } from '../stylesheets/menyST'
 
   class Meny extends Component {
       constructor(props) {
         super(props);
         this.Menu_Item = [
-          'home', 'coffee', 'tea', 'hot-chocolate', 'BACK'
+          'HOME', 'coffee', 'tea', 'hot-chocolate', 'BACK'
         ]
       }
 
     BuildModule(){
-      return (
-        <View> 
-            this.Menu_Item.map(el =>
-              <Text> {el} </Text>
-            );
-        </View>
-        )  
+     let item = this.Menu_Item.map((el) => {
+       this.addStyle(el)
+          return (
+            <TouchableWithoutFeedback key={el}  onPress={this.menuSwitcher.bind(this)} >
+              <View key={el}>
+                <Text key={el}>{el}</Text>
+              </View>
+            </TouchableWithoutFeedback>  
+            )
+     })
+     return item
     }
 
+    addStyle(el){
+      return (el == 'HOME' || el == 'BACK') ? console.log('HOME') : console.log(el, 'else');
+    }
+
+    menuSwitcher(){
+     console.log('el');
+    }
 
     render() {
       return (
-        <View style={{flex: 1,  backgroundColor: '#1b1814', justifyContent: 'flex-end'}}>
-           <App />
+        <View style={{flex: 1.3,  backgroundColor: '#f3f3f3'}}>
+            {this.BuildModule()}
         </View >
       );
     }
   }
 
+export default Meny;
